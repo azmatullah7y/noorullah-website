@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noor Ullah Khan — Tourmaline &amp; Crystals, Mohmand KPK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1C1B18;
+    --stone:#EDE4D3;
+    --paper:#F7F2E9;
+    --pink:#B23A62;
+    --pink-deep:#7C2140;
+    --green:#2F5D50;
+    --gold:#B8935A;
+    --muted:#6B6357;
+    --line: rgba(28,27,24,0.14);
+    --font-display:'Fraunces', serif;
+    --font-body:'Inter', sans-serif;
+    --font-mono:'Space Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+
+  /* ---------- texture / vein background ---------- */
+  .vein-bg{
+    position:fixed; inset:0; z-index:-1; opacity:0.5; pointer-events:none;
+  }
+
+  /* ---------- nav ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px clamp(20px,5vw,64px);
+    background:rgba(247,242,233,0.86);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .brand{display:flex; flex-direction:column; line-height:1.1;}
+  .brand .name{
+    font-family:var(--font-display); font-weight:600; font-size:20px; letter-spacing:0.02em;
+  }
+  .brand .tag{
+    font-family:var(--font-mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted); margin-top:3px;
+  }
+  nav ul{list-style:none; display:flex; gap:clamp(16px,3vw,36px);}
+  nav a{
+    font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    text-decoration:none; color:var(--ink); position:relative; padding-bottom:4px;
+  }
+  nav a::after{
+    content:""; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--pink);
+    transition:width .3s ease;
+  }
+  nav a:hover::after{width:100%;}
+  @media (max-width:640px){ nav ul{display:none;} }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:clamp(70px,14vh,140px) clamp(20px,6vw,64px) clamp(60px,10vh,100px);
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:48px; align-items:center;
+    border-bottom:1px solid var(--line);
+  }
+  @media (max-width:900px){ .hero{grid-template-columns:1fr;} }
+  .eyebrow{
+    font-family:var(--font-mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--pink); margin-bottom:18px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:22px; height:1px; background:var(--pink);}
+  h1{
+    font-family:var(--font-display); font-weight:600;
+    font-size:clamp(38px,6vw,74px); line-height:0.98; letter-spacing:-0.01em;
+  }
+  h1 em{font-style:italic; font-weight:500; color:var(--pink-deep);}
+  .hero p.lede{
+    margin-top:24px; max-width:46ch; font-size:17px; color:#3a362f;
+  }
+  .hero-cta{margin-top:34px; display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    padding:14px 26px; border:1px solid var(--ink); text-decoration:none;
+    transition:all .25s ease; display:inline-block;
+  }
+  .btn-solid{background:var(--ink); color:var(--paper);}
+  .btn-solid:hover{background:var(--pink-deep); border-color:var(--pink-deep);}
+  .btn-outline:hover{background:var(--ink); color:var(--paper);}
+
+  /* signature gem visual */
+  .gem-hero{position:relative; display:flex; align-items:center; justify-content:center; height:clamp(280px,40vw,420px);}
+  .gem-hero svg{width:100%; height:100%; max-width:380px;}
+  .facet-shimmer{animation:shimmer 5s ease-in-out infinite;}
+  @keyframes shimmer{
+    0%,100%{opacity:0.55;}
+    50%{opacity:1;}
+  }
+
+  /* ---------- divider ---------- */
+  .vein-divider{width:100%; height:46px; display:block;}
+
+  /* ---------- section shells ---------- */
+  section{padding:clamp(50px,9vh,96px) clamp(20px,6vw,64px);}
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:44px;
+    border-bottom:1px solid var(--line); padding-bottom:22px; flex-wrap:wrap;
+  }
+  .section-head h2{
+    font-family:var(--font-display); font-weight:600; font-size:clamp(28px,3.6vw,42px);
+  }
+  .section-head .meta{
+    font-family:var(--font-mono); font-size:12px; color:var(--muted); max-width:34ch; text-align:right;
+  }
+  @media (max-width:640px){ .section-head .meta{text-align:left;} }
+
+  /* ---------- about ---------- */
+  .about{background:var(--stone); border-bottom:1px solid var(--line);}
+  .about-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:start;}
+  @media (max-width:860px){ .about-grid{grid-template-columns:1fr;} }
+  .about-grid p{max-width:58ch; margin-bottom:16px; color:#3a362f;}
+  .stat-row{display:flex; gap:36px; margin-top:30px; flex-wrap:wrap;}
+  .stat{border-left:2px solid var(--pink); padding-left:14px;}
+  .stat .n{font-family:var(--font-display); font-size:28px; font-weight:600;}
+  .stat .l{font-family:var(--font-mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted);}
+
+  /* ---------- collection ---------- */
+  .grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:40px 28px;
+  }
+  .gem-card{
+    position:relative;
+    clip-path:polygon(7% 0%, 93% 0%, 100% 14%, 100% 86%, 93% 100%, 7% 100%, 0% 86%, 0% 14%);
+    background:var(--ink);
+    color:var(--paper);
+    padding:2px;
+    transition:transform .4s ease;
+  }
+  .gem-card:hover{transform:translateY(-6px);}
+  .gem-inner{
+    clip-path:polygon(7% 0%, 93% 0%, 100% 14%, 100% 86%, 93% 100%, 7% 100%, 0% 86%, 0% 14%);
+    background:linear-gradient(155deg, var(--card-a,#7C2140) 0%, var(--ink) 62%);
+    padding:34px 26px 28px;
+    height:100%;
+    position:relative;
+    overflow:hidden;
+  }
+  .gem-inner::before{
+    content:""; position:absolute; top:-60%; left:-30%; width:60%; height:220%;
+    background:linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.16) 50%, rgba(255,255,255,0) 100%);
+    transform:rotate(18deg); transition:left 0.7s ease;
+  }
+  .gem-card:hover .gem-inner::before{left:130%;}
+  .gem-index{font-family:var(--font-mono); font-size:11px; color:rgba(247,242,233,0.55); letter-spacing:0.1em;}
+  .gem-name{font-family:var(--font-display); font-size:23px; font-weight:600; margin-top:10px; line-height:1.15;}
+  .gem-desc{font-size:13.5px; color:rgba(247,242,233,0.82); margin-top:10px; min-height:54px;}
+  .gem-specs{
+    margin-top:18px; padding-top:16px; border-top:1px solid rgba(247,242,233,0.22);
+    display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:10.5px;
+    color:rgba(247,242,233,0.7); text-transform:uppercase; letter-spacing:0.05em;
+  }
+  .gem-price{
+    margin-top:16px; font-family:var(--font-mono); font-size:12px; letter-spacing:0.06em;
+    color:var(--gold);
+  }
+  .note{
+    font-family:var(--font-mono); font-size:11.5px; color:var(--muted); margin-top:36px; max-width:60ch;
+  }
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--ink); color:var(--paper); border-top:1px solid var(--line);}
+  .contact .section-head{border-bottom-color:rgba(247,242,233,0.18);}
+  .contact .section-head .meta{color:rgba(247,242,233,0.55);}
+  .contact-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:30px;}
+  .contact-card{
+    border:1px solid rgba(247,242,233,0.2); padding:26px 22px;
+    transition:border-color .25s ease, background .25s ease;
+  }
+  .contact-card:hover{border-color:var(--gold); background:rgba(184,147,90,0.06);}
+  .contact-card svg{width:22px; height:22px; stroke:var(--gold); margin-bottom:16px;}
+  .contact-card .label{
+    font-family:var(--font-mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(247,242,233,0.5);
+  }
+  .contact-card .value{
+    font-family:var(--font-display); font-size:17px; margin-top:8px; word-break:break-word;
+  }
+  .contact-card a{text-decoration:none;}
+  .contact-card a:hover .value{color:var(--gold);}
+
+  footer{
+    background:var(--ink); color:rgba(247,242,233,0.5);
+    padding:26px clamp(20px,6vw,64px); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.05em; border-top:1px solid rgba(247,242,233,0.14);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<svg class="vein-bg" preserveAspectRatio="none" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <path d="M-20,120 C 200,80 320,220 480,160 S 760,60 900,140 1100,260 1220,180" stroke="#B8935A" stroke-width="1" fill="none" opacity="0.35"/>
+  <path d="M-40,520 C 180,460 340,600 520,540 S 820,420 980,540 1140,640 1240,560" stroke="#2F5D50" stroke-width="1" fill="none" opacity="0.25"/>
+  <path d="M-20,820 C 220,780 360,900 560,840 S 860,760 1000,860 1160,900 1240,840" stroke="#B23A62" stroke-width="1" fill="none" opacity="0.2"/>
+</svg>
+
+<header>
+  <div class="brand">
+    <span class="name">NOOR ULLAH Khan</span>
+    <span class="tag">Gemstones &amp; Crystals · Mohmand, KPK</span>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#collection">Collection</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">Raw from the pegmatite belt</div>
+    <h1>Tourmaline,<br><em>cut from the mountains</em><br>of Mohmand.</h1>
+    <p class="lede">Noor Ullah sources natural tourmaline and crystal specimens directly from the gem-bearing pegmatites of Khyber Pakhtunkhwa — no middlemen, no synthetic stock, just stone as it comes out of the ground.</p>
+    <div class="hero-cta">
+      <a href="#collection" class="btn btn-solid">View the Collection</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="gem-hero">
+    <svg viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="gemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#E36B95"/>
+          <stop offset="45%" stop-color="#B23A62"/>
+          <stop offset="100%" stop-color="#2F5D50"/>
+        </linearGradient>
+      </defs>
+      <polygon class="facet-shimmer" points="150,10 220,50 250,140 200,300 100,300 50,140 80,50" fill="url(#gemGrad)" stroke="#1C1B18" stroke-width="2"/>
+      <polyline points="150,10 150,90" stroke="#1C1B18" stroke-width="1.5" opacity="0.5"/>
+      <polyline points="220,50 150,90 250,140" stroke="#1C1B18" stroke-width="1.5" opacity="0.5"/>
+      <polyline points="80,50 150,90 50,140" stroke="#1C1B18" stroke-width="1.5" opacity="0.5"/>
+      <polyline points="150,90 200,300" stroke="#1C1B18" stroke-width="1.5" opacity="0.4"/>
+      <polyline points="150,90 100,300" stroke="#1C1B18" stroke-width="1.5" opacity="0.4"/>
+      <polyline points="50,140 250,140" stroke="#1C1B18" stroke-width="1.5" opacity="0.3"/>
+    </svg>
+  </div>
+</section>
+
+<svg class="vein-divider" viewBox="0 0 1200 46" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0,23 C150,5 250,41 400,23 S650,5 800,23 1050,41 1200,23" stroke="#B8935A" stroke-width="1" fill="none" opacity="0.5"/>
+</svg>
+
+<section class="about reveal" id="about">
+  <div class="section-head">
+    <h2>About the source</h2>
+    <div class="meta">Mohmand, once known chiefly for its mica and gem pegmatites, is home to some of KPK's tourmaline finds.</div>
+  </div>
+  <div class="about-grid">
+    <div>
+      <p>My name is <strong>Noor Ullah Khan</strong>. I live and work in Musa Khel, Upper Mohmand, in the pegmatite country of Khyber Pakhtunkhwa — one of the belts that also produces the emerald, aquamarine, and tourmaline Pakistan is known for internationally.</p>
+      <p>Every specimen listed here is handled personally, from the point it's brought down from the mine to the point it reaches you. I deal directly in raw and lightly-cleaned natural tourmaline and other crystal specimens — no lab-grown material, no resale of imported stock.</p>
+    </div>
+    <div>
+      <div class="stat-row">
+        <div class="stat"><div class="n">KPK</div><div class="l">Sourced Locally</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">Natural, Unheated</div></div>
+        <div class="stat"><div class="n">1:1</div><div class="l">Direct From Miner</div></div>
+      </div>
+      <p style="margin-top:30px;">Interested in a specific size, color, or piece for cutting versus display? Reach out directly — see contact details below.</p>
+    </div>
+  </div>
+</section>
+
+<section id="collection" class="reveal">
+  <div class="section-head">
+    <h2>Tourmaline Collection</h2>
+    <div class="meta">A working sample of what's typically on hand. Availability shifts with each trip to the mine — ask for current stock.</div>
+  </div>
+  <div class="grid">
+
+    <div class="gem-card" style="--card-a:#7C2140;">
+      <div class="gem-inner">
+        <div class="gem-index">01 / Rubellite</div>
+        <div class="gem-name">Pink Rubellite Tourmaline</div>
+        <div class="gem-desc">Raw natural crystal, deep rose-pink colour with terminated point, minimal surface damage.</div>
+        <div class="gem-specs"><span>Origin: Mohmand</span><span>Raw</span></div>
+        <div class="gem-price">Message for price</div>
+      </div>
+    </div>
+
+    <div class="gem-card" style="--card-a:#2F5D50;">
+      <div class="gem-inner">
+        <div class="gem-index">02 / Verdelite</div>
+        <div class="gem-name">Green Verdelite Tourmaline</div>
+        <div class="gem-desc">Forest-green natural crystal with strong pleochroism, good clarity for the size.</div>
+        <div class="gem-specs"><span>Origin: KPK</span><span>Raw</span></div>
+        <div class="gem-price">Message for price</div>
+      </div>
+    </div>
+
+    <div class="gem-card" style="--card-a:#5C3A73;">
+      <div class="gem-inner">
+        <div class="gem-index">03 / Bi-Colour</div>
+        <div class="gem-name">Watermelon Tourmaline</div>
+        <div class="gem-desc">Pink-core, green-rind bi-colour crystal section — a natural watermelon-tourmaline cut face.</div>
+        <div class="gem-specs"><span>Origin: Mohmand</span><span>Slice</span></div>
+        <div class="gem-price">Message for price</div>
+      </div>
+    </div>
+
+    <div class="gem-card" style="--card-a:#1F2A2E;">
+      <div class="gem-inner">
+        <div class="gem-index">04 / Schorl</div>
+        <div class="gem-name">Black Tourmaline (Schorl)</div>
+        <div class="gem-desc">Lustrous jet-black raw specimen, striated crystal faces, sold whole or as cluster.</div>
+        <div class="gem-specs"><span>Origin: KPK</span><span>Raw</span></div>
+        <div class="gem-price">Message for price</div>
+      </div>
+    </div>
+
+    <div class="gem-card" style="--card-a:#1D4E6B;">
+      <div class="gem-inner">
+        <div class="gem-index">05 / Indicolite</div>
+        <div class="gem-name">Blue-Green Indicolite</div>
+        <div class="gem-desc">Rare blue-green toned tourmaline, small facet-grade pieces available on request.</div>
+        <div class="gem-specs"><span>Origin: Mohmand</span><span>Facet Grade</span></div>
+        <div class="gem-price">Message for price</div>
+      </div>
+    </div>
+
+    <div class="gem-card" style="--card-a:#8A6D2F;">
+      <div class="gem-inner">
+        <div class="gem-index">06 / Included Quartz</div>
+        <div class="gem-name">Tourmalinated Quartz</div>
+        <div class="gem-desc">Clear quartz with natural black tourmaline needle inclusions, polished and raw pieces both available.</div>
+        <div class="gem-specs"><span>Origin: KPK</span><span>Mixed</span></div>
+        <div class="gem-price">Message for price</div>
+      </div>
+    </div>
+
+  </div>
+  <p class="note">Photos and exact weights are shared per piece over WhatsApp or email — stock changes with each batch brought down from site.</p>
+</section>
+
+<section id="contact" class="contact reveal">
+  <div class="section-head">
+    <h2>Contact</h2>
+    <div class="meta">Based in Upper Mohmand, KPK — reachable by phone, WhatsApp, or email.</div>
+  </div>
+  <div class="contact-grid">
+
+    <div class="contact-card">
+      <a href="mailto:noorullah.091050@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+        <div class="label">Email</div>
+        <div class="value">noorullah.091050@gmail.com</div>
+      </a>
+    </div>
+
+    <div class="contact-card">
+      <a href="https://wa.me/923095152164" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.6-4.8A8.5 8.5 0 1112 20.5c-1.5 0-2.9-.4-4.1-1.1z"/></svg>
+        <div class="label">Mobile / WhatsApp</div>
+        <div class="value">+92 309 5152164</div>
+      </a>
+    </div>
+
+    <div class="contact-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 105 9.5C5 14.4 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+      <div class="label">Address</div>
+      <div class="value" style="font-size:14.5px; font-family:var(--font-body); line-height:1.5;">Musa Khel Post Office Yousaf Teh<br>Upper Mohmand, KPK, Mohmand, 49750<br>Pakistan</div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <span>© <span id="year"></span> Noor Ullah Khan — Gemstones &amp; Crystals, Mohmand, KPK</span>
+  <span>Natural tourmaline, sourced and sold directly.</span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
